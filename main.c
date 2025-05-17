@@ -1,53 +1,70 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
-char clientes[100][100];
-int total_clientes = 0;
+int clientes_listados, clientes_cadastrados, produtos_cadastrados;
+char clientes[10][50];
+char produtos[10][40];
 
-void cadastrar_cliente(char nome[100]){
-
-    strcpy(clientes[total_clientes], nome);
-    total_clientes++;
-
-}
-void cadastrar_produtos(){
-
-}
-void listar_clientes() {
-    printf("Lista de clientes:\n");
-    for (int i = 0; i < total_clientes; i++) {
-        printf("%d. %s\n", i + 1, clientes[i]);
+ void listar_clientes() {
+    for (int i = 0; i < clientes_cadastrados; i++) {
+        printf(":: %s\n", clientes[i]);
     }
 }
+void cadastrar_clientes(){
+    printf("Insira o cliente::\t");
+    scanf("%s", clientes[clientes_cadastrados]);
+    clientes_cadastrados++;
+    printf("cliente adicionado");
+}
 
+void adicionar_produtos(){
+    printf("Insira o produto::\t");
+    scanf("%s", produtos[produtos_cadastrados]);
+    produtos_cadastrados++;
+}
 
+void listar_produtos(){
+for (int i=0; i < produtos_cadastrados; i++)
+    printf(":: %s\n", produtos[i]);
 
-void castrar_venda(){
-    printf("");
 }
 
 
-void menu(int opcao){
-    if(opcao == 1){
-        char nome_cliente[100];
-        printf("Digite o nome do cliente\n::\t");
-        scanf("%s", &nome_cliente);
-        cadastrar_cliente(nome_cliente);
+int menu()
+{
+    int option;
+    do{
+    printf("BEM VINDO AO PAINEL DO VENDEDOR:\n1) Cadastrar um cliente\n2) Cadastrar um produto\n3) Realizar uma venda\n4) Listar clientes\n5) Listar produtos\n6) Listar vendas\n0) Sair\n\n::\t");
+    scanf("%d", &option);
+    
+    if (option == 1){
+        cadastrar_clientes();
     }
-    else if(opcao == 2){
+    else if(option == 2){
         cadastrar_produtos();
-    }else if(opcao == 3){
-        listar_clientes();
-    }else if(opcao == 4){
-        castrar_venda();
-    }else{
-        printf("Opcao invalida, por favor tente novamente");
     }
-}
-void main(){
-    int opcao;
-    printf("Bem-Vindo ao Menu de vendas\nO que deseja fazer\n(1)Cadastrar um cliente\n(2)Cadastrar um produto\n(3)Lista clientes\n(4)Cadastrar uma venda\n\n::\t");
-    scanf("%d", &opcao);
-    menu(opcao);
+    else if (option == 3){
+        \\fazer
+    }
+    else if (option == 4){
+        listar_clientes();
+    }
+    else if (option == 5){
+        listar_produtos();
+    } 
+    else if (option== 6){
+      \\fazer
+    }
+    else if(option == 0){
+    }
+    } while(option > 0);
+
+
+    return 0;
 }
 
+int main(){
+    menu();
+return 0;
+}
