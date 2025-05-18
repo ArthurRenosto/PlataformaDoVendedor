@@ -3,10 +3,10 @@
 #include <string.h>
 
 int clientes_listados, clientes_cadastrados, produtos_cadastrados;
-char clientes[10][50];
-char produtos[10][40];
+char clientes[100][100];
+char produtos[100][100];
 
- void listar_clientes() {
+void listar_clientes() {
     for (int i = 0; i < clientes_cadastrados; i++) {
         printf(":: %s\n", clientes[i]);
     }
@@ -25,8 +25,8 @@ void adicionar_produtos(){
 }
 
 void listar_produtos(){
-for (int i=0; i < produtos_cadastrados; i++)
-    printf(":: %s\n", produtos[i]);
+    for (int i=0; i < produtos_cadastrados; i++)
+        printf(":: %s\n", produtos[i]);
 
 }
 
@@ -35,29 +35,29 @@ int menu()
 {
     int option;
     do{
-    printf("BEM VINDO AO PAINEL DO VENDEDOR:\n1) Cadastrar um cliente\n2) Cadastrar um produto\n3) Realizar uma venda\n4) Listar clientes\n5) Listar produtos\n6) Listar vendas\n0) Sair\n\n::\t");
-    scanf("%d", &option);
-    
-    if (option == 1){
-        cadastrar_clientes();
-    }
-    else if(option == 2){
-        cadastrar_produtos();
-    }
-    else if (option == 3){
-        \\fazer
-    }
-    else if (option == 4){
-        listar_clientes();
-    }
-    else if (option == 5){
-        listar_produtos();
-    } 
-    else if (option== 6){
-      \\fazer
-    }
-    else if(option == 0){
-    }
+        printf("BEM VINDO AO PAINEL DO VENDEDOR:\n1) Cadastrar um cliente\n2) Cadastrar um produto\n3) Realizar uma venda\n4) Listar clientes\n5) Listar produtos\n6) Listar vendas\n0) Sair\n\n::\t");
+        scanf("%d", &option);
+
+        if (option == 1){
+            cadastrar_clientes();
+        }
+        else if(option == 2){
+            cadastrar_produtos();
+        }
+        else if (option == 3){
+            /fazer
+        }
+        else if (option == 4){
+            listar_clientes();
+        }
+        else if (option == 5){
+            listar_produtos();
+        }
+        else if (option== 6){
+            //fazer
+          }
+        else if(option == 0){
+        }
     } while(option > 0);
 
 
@@ -66,5 +66,5 @@ int menu()
 
 int main(){
     menu();
-return 0;
+    return 0;
 }
