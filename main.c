@@ -15,10 +15,10 @@ void cadastrar_clientes(){
     printf("Insira o cliente::\t");
     scanf("%s", clientes[clientes_cadastrados]);
     clientes_cadastrados++;
-    printf("cliente adicionado");
+    printf("cliente cadastrado");
 }
 
-void adicionar_produtos(){
+void cadastrar_produtos(){
     printf("Insira o produto::\t");
     scanf("%s", produtos[produtos_cadastrados]);
     produtos_cadastrados++;
@@ -45,7 +45,7 @@ int menu()
             cadastrar_produtos();
         }
         else if (option == 3){
-            /fazer
+            //fazer
         }
         else if (option == 4){
             listar_clientes();
